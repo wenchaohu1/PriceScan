@@ -10,24 +10,20 @@ import SwiftUI
 struct PriceScan: Identifiable, Codable, Comparable {
   
   var id = UUID()  // To conform to Identifiable protocol
+  
   // Additional properties, etc.
+  var item: String
+  var price: Double
+  var date: String
+      
   
-
-  
-  
-  
-  
-  
-  
-  
-  
-//  func onDate() -> String {
-//    // return Helper.getShortDate(       )
-//  }
+  func onDate() -> String {
+     return Helper.getShortDate(date)
+  }
   
   // To conform to Comparable protocol
   static func < (lhs: PriceScan, rhs: PriceScan) -> Bool {
-    
+    return lhs.date < rhs.date
   }
   
   // MARK: Example for SwiftUI
